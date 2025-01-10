@@ -13,14 +13,14 @@ public class Measurement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     private Double value;
 
-   // @Column(nullable = false)
+    @Column(nullable = false)
     private Boolean raining;
 
     @ManyToOne
-    @JoinColumn(name = "sensor_id") // nullable = false)
+    @JoinColumn(name = "sensor_id", nullable = false)
     private Sensor sensor;
 
     public Long getId() {

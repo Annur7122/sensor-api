@@ -3,6 +3,8 @@ package com.example.sensor_api.controller;
 import com.example.sensor_api.dto.MeasurementRequest;
 import com.example.sensor_api.model.Measurement;
 import com.example.sensor_api.service.MeasurementService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +32,9 @@ public class MeasurementController {
 
     //чекни тут
     @GetMapping
-    public ResponseEntity<List<Measurement>> getAllMeasurements(){
+    public ResponseEntity<List<Measurement>> getAllMeasurements(HttpServletRequest request){
+        String username = (String) request.getAttribute("username");
+        System.out.println("Запрос от пользователя: " + username);
         return ResponseEntity.ok(measurementService.getAllMeasurement());
     }
 

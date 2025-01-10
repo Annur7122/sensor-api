@@ -8,12 +8,12 @@ public class SensorRequest {
 
     }
 
-    // Constructor
+
     public SensorRequest(String name) {
         this.name = name;
     }
 
-    // Getter and Setter for name
+
     public String getName() {
         return name;
     }
