@@ -23,6 +23,7 @@ public class Measurement {
     @JoinColumn(name = "sensor_id", nullable = false)
     private Sensor sensor;
 
+
     public Long getId() {
         return id;
     }
